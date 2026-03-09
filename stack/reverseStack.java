@@ -10,7 +10,6 @@ public class reverseStack {
     st.push(2);
     System.out.println(st);
 
-
      //reverse stack element
     Stack<Integer> reverseStack = new Stack<>();
     while(st.size()>0){
@@ -19,6 +18,10 @@ public class reverseStack {
     System.out.println(reverseStack);
 
     //reversing again to maintain same order as st into result stack
-    
+    Stack<Integer> resultStack = new Stack<>();
+    while(reverseStack.size()>0){
+      resultStack.push(reverseStack.pop());
+    }
+    System.out.println(resultStack);
   }
 }
