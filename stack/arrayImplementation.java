@@ -26,13 +26,32 @@ public class arrayImplementation {
       idx--;
       return popElement;
     }
+    void display(){
+      for(int i = 0; i<=idx-1;i++){
+        System.out.print(arr[i]+" ");
+      }  
+    }
+    int size(){
+      return idx;
+    }
   }
   public static void main(String[] args){
     Stack s = new Stack();
     s.push(30);
     s.push(50);
     s.push(10);
-    s.pop();
-    s.peek();
+    s.push(70);
+    s.push(20);
+    System.out.println("after push operation ");
+    s.display();
+    System.out.println();
+    System.out.println("poped out element is "+s.pop());
+    System.out.println("after one element is deleted from stack - ");
+    s.display();
+    System.out.println();
+    System.out.println("peek element is "+s.peek());
+    s.display();
+    System.out.println();
+    System.out.println("size of stack is "+s.size());
   }
 }
