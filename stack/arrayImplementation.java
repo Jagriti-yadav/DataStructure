@@ -6,6 +6,10 @@ public class arrayImplementation {
     int[] arr = new int[5];
     int idx = 0;
     void push(int x){
+      if(isFull()){
+        System.out.println("stack is full");
+        return;
+      }
       arr[idx]=x;
       idx++;
     }
@@ -33,6 +37,20 @@ public class arrayImplementation {
     }
     int size(){
       return idx;
+    }
+    boolean isEmpty(){
+      if(idx==0){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    boolean isFull(){
+      if(idx==arr.length){
+        return true;
+      }else{
+        return false;
+      }
     }
   }
   public static void main(String[] args){
