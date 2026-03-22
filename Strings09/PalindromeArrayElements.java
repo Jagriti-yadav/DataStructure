@@ -1,6 +1,6 @@
 package Strings09;
 
-public class Palindrome {
+public class PalindromeArrayElements {
 
   static boolean isPalindrome(String str){
     int i = 0;
