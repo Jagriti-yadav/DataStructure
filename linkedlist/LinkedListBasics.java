@@ -8,6 +8,42 @@ public class LinkedListBasics {
       this.data = data;
     }
   }
+
+  //display elements through method
+  public static void Display(Node head){
+    Node temp = head;
+    while(temp!=null){
+    System.out.print(temp.data + " ");
+    temp = temp.next;
+    }
+  }
+
+  //display through recursive function
+  public static void displayRecursive(Node head){
+    //base case
+    if(head==null) return;
+    System.out.print(head.data+" ");
+    displayRecursive(head.next);
+  }
+  
+  //reverse linkedlist
+  public static void displayReverseLinkedList(Node head){
+    if(head==null){
+      return;
+    }
+    displayReverseLinkedList(head.next);
+    System.out.print(head.data+" ");
+  }
+
+  //length of linkedlist
+  public static int length(Node head){
+    int count = 0;
+    while(head!=null){
+      count++;
+      head = head.next;
+    }
+    return count;
+  }
   public static void main(String[] args){
     Node a = new Node(4);
     Node b = new Node(5);
@@ -50,6 +86,26 @@ public class LinkedListBasics {
     System.out.println(d.data);
     System.out.println(c.next.data);
 
-    
+    //displaying list elements (by creating temp node and then keep changing its address to next node)
+    //Node temp = a;
+    // for(int i = 0;i<=3;i++){
+    //   System.out.print(temp.data+" ");
+    //   temp = temp.next;
+    // }
+
+    //displaying using while loop
+    // while(temp!=null){
+    //   System.out.print(temp.data + " ");
+    //   temp = temp.next;
+    // }
+
+    //display list element using method
+    Display(a);
+    System.out.println();
+    //displaying elements recursively
+    displayRecursive(a);
+    System.out.println();
+    System.out.println("length of the string is "+length(a));
+    displayReverseLinkedList(a);
   }
 }
