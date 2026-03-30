@@ -44,6 +44,15 @@ public class LinkedListBasics {
     }
     return count;
   }
+
+  public static void insertAtEnd(Node head,int val){
+    Node temp = new Node(5);
+    Node t = head;
+    while(t.next!=null){
+      t = t.next;
+    }
+    t.next = temp;
+  }
   public static void main(String[] args){
     Node a = new Node(4);
     Node b = new Node(5);
@@ -107,5 +116,8 @@ public class LinkedListBasics {
     System.out.println();
     System.out.println("length of the string is "+length(a));
     displayReverseLinkedList(a);
+    System.out.println();
+    insertAtEnd(a,5);
+    displayRecursive(a);
   }
 }
