@@ -1,3 +1,9 @@
+
+
+//insertion at beginning , at last , at given position
+//deletion at beginning, at last, at given node, delete given node
+//find size , isEmpty , display element , displayRecursively , reverseDisplayRecursively,SplitEvenOdd
+
 package linkedlist;
 
 class Node{
