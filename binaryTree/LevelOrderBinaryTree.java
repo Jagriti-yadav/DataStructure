@@ -42,6 +42,25 @@ public class LevelOrderBinaryTree {
     return 1+ Math.max(height(root.left),height(root.right));
   }
 
+  /************************************* print nth level elements *********************************/
+  public static void nthLevel(Node root,int n){
+    if(root == null) return;
+    if(n==1){
+      System.out.print(root.data+" ");
+      return;
+    }
+    nthLevel(root.left, n-1);
+    nthLevel(root.right, n-1);
+  }
+
+  /*************************************** sum of nodes of tree ***********************************/
+  public static int sum(Node root){
+    if(root==null){
+      return 0;
+    }
+    return root.data + sum(root.left) + sum(root.right);
+  }
+
   public static void main(String[] args){
     Scanner sc = new Scanner(System.in);
     System.out.println("enter the root element");
@@ -69,7 +88,9 @@ public class LevelOrderBinaryTree {
     System.out.println("size of the tree is : "+size);
     System.out.println("max node in the tree is : "+max(root));
     System.out.println("height of the tree is : "+height(root));
-
+    nthLevel(root, 2);
+    System.out.println();
+    System.out.println(sum(root));
     sc.close();
   }
 }
